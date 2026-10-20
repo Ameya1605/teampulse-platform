@@ -1,0 +1,21 @@
+{
+  "version": "2.0",
+  "project": {
+    "name": "teampulse-platform",
+    "repo_url": "https://github.com/Ameya1605/teampulse-platform",
+    "project_type": "saas",
+    "is_ai_enabled": true
+  },
+  "structure": "monorepo",
+  "apps": [
+    "api",
+    "web"
+  ],
+  "enums": [],
+  "relations": [],
+  "database": [],
+  "endpoints": [],
+  "ui_components": [],
+  "features": [],
+  "prompts": []
+}

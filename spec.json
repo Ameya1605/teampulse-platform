@@ -13,9 +13,371 @@
   ],
   "enums": [],
   "relations": [],
-  "database": [],
-  "endpoints": [],
-  "ui_components": [],
-  "features": [],
+  "database": [
+    {
+      "table_name": "documents",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "organization_id",
+          "type": "integer",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "file_path",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "size_bytes",
+          "type": "integer",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "organization_id",
+          "type": "integer",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "file_path",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "size_bytes",
+          "type": "integer",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "relations": [],
+      "code": null
+    },
+    {
+      "table_name": "users",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "password_hash",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "role",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "password_hash",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "role",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "relations": [],
+      "code": null
+    },
+    {
+      "table_name": "organizations",
+      "columns": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "created_at",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "integer",
+          "primary_key": true,
+          "nullable": false,
+          "unique": false,
+          "default": "autoincrement()",
+          "index": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "domain",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        },
+        {
+          "name": "created_at",
+          "type": "string",
+          "primary_key": false,
+          "nullable": false,
+          "unique": false,
+          "default": null,
+          "index": false
+        }
+      ],
+      "relations": [],
+      "code": null
+    }
+  ],
+  "endpoints": [
+    {
+      "method": "GET",
+      "route": "/user-authentication",
+      "linked_table": null,
+      "auth_required": true,
+      "auth_type": "bearer",
+      "roles": [],
+      "request_schema": {},
+      "response_schema": {},
+      "code": null
+    },
+    {
+      "method": "GET",
+      "route": "/organization-management",
+      "linked_table": null,
+      "auth_required": true,
+      "auth_type": "bearer",
+      "roles": [],
+      "request_schema": {},
+      "response_schema": {},
+      "code": null
+    },
+    {
+      "method": "GET",
+      "route": "/role-based-access-control",
+      "linked_table": null,
+      "auth_required": true,
+      "auth_type": "bearer",
+      "roles": [],
+      "request_schema": {},
+      "response_schema": {},
+      "code": null
+    },
+    {
+      "method": "GET",
+      "route": "/subscription-billing",
+      "linked_table": null,
+      "auth_required": true,
+      "auth_type": "bearer",
+      "roles": [],
+      "request_schema": {},
+      "response_schema": {},
+      "code": null
+    },
+    {
+      "method": "GET",
+      "route": "/document-storage",
+      "linked_table": null,
+      "auth_required": true,
+      "auth_type": "bearer",
+      "roles": [],
+      "request_schema": {},
+      "response_schema": {},
+      "code": null
+    }
+  ],
+  "ui_components": [
+    {
+      "name": "Organization Management",
+      "type": "page",
+      "route": null,
+      "code": null
+    },
+    {
+      "name": "Role-Based Access Control",
+      "type": "page",
+      "route": null,
+      "code": null
+    },
+    {
+      "name": "User Authentication",
+      "type": "page",
+      "route": null,
+      "code": null
+    },
+    {
+      "name": "Subscription Billing",
+      "type": "page",
+      "route": null,
+      "code": null
+    },
+    {
+      "name": "Document Storage",
+      "type": "page",
+      "route": null,
+      "code": null
+    }
+  ],
+  "features": [
+    {
+      "id": 6,
+      "name": "User Authentication",
+      "status": "planned",
+      "description": null
+    },
+    {
+      "id": 7,
+      "name": "Role-Based Access Control",
+      "status": "planned",
+      "description": null
+    },
+    {
+      "id": 8,
+      "name": "Organization Management",
+      "status": "planned",
+      "description": null
+    },
+    {
+      "id": 9,
+      "name": "Document Storage",
+      "status": "planned",
+      "description": null
+    },
+    {
+      "id": 10,
+      "name": "Subscription Billing",
+      "status": "planned",
+      "description": null
+    }
+  ],
   "prompts": []
 }

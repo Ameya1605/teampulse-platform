@@ -30,3 +30,12 @@ model organizations {
   domain String
   created_at String
 }
+
+model AuditLog {
+  id Int @id @default(autoincrement())
+  organization_id Int
+  actor_id Int
+  action String
+  ip_address String
+  created_at DateTime
+}
